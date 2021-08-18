@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import Planeta from "./scripts/planetas.js";
-=======
 import corredores  from "./planetas.js"
->>>>>>> victor
 
-let valores;
+let id;
 let distancia;
 let nombrePlaneta = [];
-<<<<<<< HEAD
-let numeroPlaneta = [];
-let tamanio = [];
-=======
 let arregloPlaneta = [];
 let aTamanio = [];
 
@@ -23,7 +15,7 @@ enviar.addEventListener("click", e => {
     let dPlaneta = [...document.querySelectorAll('.distanciaPlaneta')];
     let tamanio = [...document.querySelectorAll('.tamanioPlanetas')];
 
-    valores = numPlanetas.map(numero => {
+    id = numPlanetas.map(numero => {
         return parseInt(numero.value);
     });
     nombrePlaneta = nomPlanetas.map(name =>{
@@ -36,5 +28,15 @@ enviar.addEventListener("click", e => {
         return longitud.value
     });
 
-})
->>>>>>> victor
+    for (let x = 1; x <= arregloValores.length; x++) {
+        let planeta = new Planeta();
+        planeta.distancia_tierra = document.getElementById(`d_planeta_${x}`).value;
+        planeta.nombre = document.getElementById(`np_planeta_${x}`).value;
+        planeta.numero_clasificacion = document.getElementById(`n_planeta_${x}`).value;
+        planeta.tamanio = document.getElementById(`t_planeta_${x}`).value;
+    
+        arregloPlanetas.push(planeta);
+        console.log(x)
+    }
+});
+
